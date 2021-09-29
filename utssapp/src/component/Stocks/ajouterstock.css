@@ -1,0 +1,133 @@
+.addprod{
+    flex: 5;
+    padding: 20px;
+}
+
+.container{
+
+
+    display :flex;
+
+}
+
+body {
+    color: #000;
+    overflow-x: hidden;
+    height: 100%;
+    background-color: #81D4FA;
+    background-repeat: no-repeat
+}
+
+.card {
+    width: 32%;
+    padding: 30px;
+    box-shadow: 0px 8px 16px 0px #1976D2;
+    max-width: 511px
+}
+
+.card0 {
+    width: 100%;
+    padding-right: 30px;
+    box-shadow: none
+}
+
+.card1 {
+    background: linear-gradient(rgba(255, 255, 255, .2), rgba(255, 255, 255, .2)), url("https://i.imgur.com/AMBgumm.jpg");
+    min-height: 600px
+}
+
+.btn-yellow {
+    border: 2px solid #F9A825;
+    background-color: #F9A825;
+    color: greenyellow;
+    font-weight: bold;
+    letter-spacing: 1px
+}
+
+.btn-yellow:hover {
+    background-color: #F57F17;
+    border: 2px solid #F57F17
+}
+
+.btn-inverse {
+    border: 2px solid #F9A825;
+    background-color: greenyellow;
+    color: #F9A825;
+    font-weight: bold;
+    letter-spacing: 1px
+}
+
+.btn-inverse:hover {
+    background-color: #F57F17;
+    color: rgb(112, 180, 11);
+    border: 2px solid #F57F17
+}
+
+::placeholder {
+    color: #E0E0E0;
+    opacity: 1
+}
+
+:-ms-input-placeholder {
+    color: #E0E0E0
+}
+
+::-ms-input-placeholder {
+    color: #E0E0E0
+}
+
+input {
+    padding: 1px 0px 3px 0px;
+    border: none;
+    border-bottom: 1px solid lightgrey;
+    margin-bottom: 3px;
+    margin-top: 2px;
+    box-sizing: border-box;
+    color: #000;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: 500
+}
+
+input:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border-bottom: 1px solid #EF5350;
+    outline-width: 0
+}
+
+button:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline-width: 0
+}
+
+a:hover {
+    color: inherit
+}
+
+.text-sm {
+    font-size: 14px
+}
+
+.text-dim {
+    color: #BDBDBD
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer
+}
+
+@media screen and (max-width: 1056px) {
+    .card {
+        width: 100%
+    }
+
+    .align {
+        justify-content: center !important
+    }
+}
