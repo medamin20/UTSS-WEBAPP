@@ -13,8 +13,8 @@
 thead {
     font-family: 'Poppins', sans-serif;
     font-weight: bolder;
-    font-size: 20px;
-    color: #666
+    font-size: 15px;
+    color: rgb(31, 28, 28)
 }
 
 img {
@@ -50,12 +50,13 @@ img {
 
 .table thead th,
 .table td {
-    border: none
+    border: none ;
+    width: auto;
 }
 
 .table tbody td:first-child {
-    border-bottom-left-radius: 10px;
-    border-top-left-radius: 10px
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px
 }
 
 .table tbody td:last-child {
@@ -64,12 +65,14 @@ img {
 }
 
 #spacing-row {
-    height: 10px
+    height: 30px;
+    width: 150px;
+    
 }
 
 @media(max-width:575px) {
     .container {
-        width: 125%;
-        padding: 20px 10px
+        width: 200%;
+        padding: 10px 20px
     }
 }

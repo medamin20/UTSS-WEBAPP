@@ -70,7 +70,6 @@ export default class ajouterStock extends Component {
 
                 <div className="form-group">
 
-               <label class="font-weight-bold mb-0">poid</label>
             <div class="custom-control custom-checkbox custom-control-inline mt-4"> <input id="chk1" type="checkbox" name="chk" class="custom-control-input" checked/> <label for="chk1" class="custom-control-label text-sm">I agree with Terms of Service, Terms of Payments and Privacy Policy.</label> </div>
             </div>
             <div class="row px-3 mt-5"> <button type="submit" class="btn btn-yellow px-3 mr-3" onClick={this.saveStock}>Ajouter!</button> <img class="icon mr-2 mt-4" src="https://climateoptimist.org/wp-content/themes/climate.2017/img/furniture/sitelogo__icon.png"/>  </div>
