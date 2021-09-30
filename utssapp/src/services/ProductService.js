@@ -23,7 +23,7 @@ class ProductServices {
   }
 
   deleteProductkById(productId) {
-    return axios.delete(Delete_Product_Api + '/' + productId);
+    return axios.delete(Delete_Product_Api +'/'+ productId);
   }
 }
 

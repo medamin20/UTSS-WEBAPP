@@ -82,6 +82,8 @@ export default class ProductList extends Component {
       products: [],
     };
     this.addProduct = this.addProduct.bind(this);
+    this.deleteProduct = this.deleteProduct.bind(this);
+
   }
 
   componentDidMount() {
@@ -94,6 +96,23 @@ export default class ProductList extends Component {
   addProduct() {
     this.props.history.push('/add-products');
   }
+
+
+
+
+
+
+
+  deleteProduct(idOfproduct) {
+    ProductService.deleteProductkById(idOfproduct).then((res) => {
+      this.setState({
+        products: this.state.products.filter(
+          (product) => product.idProduct !== idOfproduct
+        ),
+      });
+    });
+  }
+
 
   render() {
     return (
@@ -115,7 +134,7 @@ export default class ProductList extends Component {
                 </thead>
                 <tbody>
                 {this.state.products.map((product) => (
-                    <tr class="bg-blue">
+                    <tr class="bg-blue"  key={product.idProduct}>
                         <td>{product.idProduct}</td>
                         <td class="pt-2"> <img src="https://www.pngitem.com/pimgs/m/325-3256236_products-icon-vector-product-icon-png-transparent-png.png" class="rounded-circle" alt=""/>
                           
@@ -128,8 +147,20 @@ export default class ProductList extends Component {
 
 
 
-                        <td class="pt-3"><span class="fa fa-ellipsis-v btn"></span></td>
+                        <td class="pt-3"><span class="fa fa-ellipsis-v btn"></span>
+                        
+                        <button
+                    className="btn btn-danger"
+                    onClick={() => this.deleteProduct(product.idProduct)}
+                  >
+                    Delete
+                  </button>
+                        </td>
+
+
+                        
                     </tr>
+                    
                    
                      ))}
                 </tbody>

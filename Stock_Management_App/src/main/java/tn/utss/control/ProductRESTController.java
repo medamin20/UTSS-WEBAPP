@@ -18,7 +18,7 @@ import tn.utss.model.Product;
 import tn.utss.service.ProductService;
 import tn.utss.service.ProductServiceImpl;
 
-@CrossOrigin(origins = "http://localhost:3000/")
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/utss/tn")
 public class ProductRESTController {

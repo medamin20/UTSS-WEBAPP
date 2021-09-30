@@ -19,6 +19,8 @@ import Gesproducts from "./pages/Gesproducts/Gesproducts";
 import ajouterStock from "./component/Stocks/ajouterStock";
 import addProduct from "./component/Product/addProduct";
 import ProductList from "./component/Product/ProductList";
+import AddMovement from "./component/Movement/AddMovement";
+import ListMovement from "./component/Movement/ListMovement";
 
 
 
@@ -37,6 +39,12 @@ function App() {
                  <Route exact path="/addstock" component={ajouterStock} />
                  <Route exact path="/addprod" component={addProduct} />
                  <Route exact path="/listprod" component={ProductList} />
+                 <Route exact path="/Addmov" component={AddMovement} />
+                 <Route exact path="/listmouv" component={ListMovement} />
+
+
+
+
 
                  
 

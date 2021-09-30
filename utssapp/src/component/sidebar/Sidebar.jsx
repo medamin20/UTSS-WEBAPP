@@ -21,16 +21,28 @@ export default function Sidebar() {
 
 
 
-
+                        <Link to="/Addmov" className="link">
                         <li className="sidebarListItem">
                             <Timeline className="sidebarIcon"/>
-                            statistiques 
+                            Mouvement
 
                         </li>
+                        </Link>
+
+
+                        <Link to="/listmouv" className="link">
+                        <li className="sidebarListItem">
+                            <Timeline className="sidebarIcon"/>
+                           list de Mouvement
+
+                        </li>
+                        </Link>
+
+
 
                         <li className="sidebarListItem">
                             <TrendingUp className="sidebarIcon"/>
-                            Mouvement
+                            Statistique
                         </li>
 
                         <li className="sidebarListItem">

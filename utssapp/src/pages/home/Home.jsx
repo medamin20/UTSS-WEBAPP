@@ -11,6 +11,7 @@ export default class Home extends Component {
                  <Chart/>
             <Widgetutss/>
             <FeaturedInfo/>
+            
             </div>
         )
     }

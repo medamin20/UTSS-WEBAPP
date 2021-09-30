@@ -11,23 +11,48 @@ export default class ajouterStock extends Component {
     constructor(props){
         super(props)
         this.state={
-            nameStock :''
+            nameStock :'',
+            nameStockError:''
             
         }
 
         
         this.changenameStocktHandler = this.changenameStockHandler.bind(this);
+
+        
+    }
+
+
+    validate = ()=>{
+        let nameStockError="";
+        if (!this.state.nameStock || this.state.nameStock > 3){
+            nameStockError="name can not be empty ";
+        }
+        if (nameStockError) {
+            this.setState({ nameStockError});
+            return false;
+        }
+        return true;
         
     }
 
     saveStock =(e)=>{
         e.preventDefault();
         let Stocks ={nameStock:this.state.nameStock};
+        const isValid = this.validate();
+        if (isValid){
+            console.log(this.state);
+            StockService.addStock(Stocks).then(res =>{
+                this.props.history.push('/addStock');
+            });
+
+        
+    }
         console.log('Stocks=>'+ JSON.stringify(Stocks));
         
-        StockService.addStock(Stocks).then(res =>{
-            this.props.history.push('/addStock');
-        });
+        this.setState({
+            nameStock :''
+        })
     }
 
 
@@ -35,6 +60,12 @@ export default class ajouterStock extends Component {
         this.setState({nameStock:event.target.value});}
 
         
+
+
+
+
+
+
 
     
 
@@ -64,7 +95,9 @@ export default class ajouterStock extends Component {
              <input type="text" name="name" class="mb-4" placeholder="name stock" className="form-control" value={this.state.nameStock} onChange={this.changenameStockHandler}/> 
              </div>
 
-
+             <div style={{fontSize:10, color:"red"}}>
+                 {this.state.nameStockError}
+             </div>
 
            
 

@@ -8,9 +8,14 @@ export default class Liststock extends Component {
     constructor(props){
         super(props)
         this.state={
-            Stocks:[]
+            Stocks:[],
+            stockProducts: [],
+            
         }
+
+
         
+        this.deleteStock = this.deleteStock.bind(this);
 
     }
     
@@ -18,6 +23,29 @@ export default class Liststock extends Component {
     componentDidMount(){
         StockService.getStocks().then((response)=>{this.setState({Stocks:response.data })});
     }
+
+
+
+
+
+
+    
+    deleteStock(idOfStock) {
+        StockService.deleteStockById(idOfStock).then((res) => {
+          this.setState({
+            stocks: this.state.Stocks.filter(
+              (stock) => stock.idStock !== idOfStock
+              
+              
+              
+            ),
+            
+          });
+          window.location.reload(false);
+
+        });
+      }
+
 
     render() {
         return (
@@ -36,13 +64,48 @@ export default class Liststock extends Component {
                         <div>
                             <div class="product-category"><a href="#" data-abc="true">{stock.nameStock}</a></div>
                         </div>
-                        {/* <button style={{marginLeft: "10px"}} onClick={()=>this.editprod(product.idProduct)} className="btn btn-danger">Delete </button> */}
-                        {/* <div class="product-button-group"><a class="product-button btn-wishlist" href="#" data-abc="true"><i class="fa fa-window-close"></i><span>Suprimer</span></a><a class="product-button btn-compare" href="#" data-abc="true"><i class="fa fa-retweet"></i><span>Compare</span></a><a class="product-button" onClick={()=>this.editproduct(product,id)} href="#" data-abc="true"><i class="fa fa-angle-right"></i><span>Modifier produit</span></a></div> */}
+                        <button className="btn btn-danger" onClick={() => this.deleteStock(stock.idStock) && this.refresh()
+                    }>
+                    Delete
+                  </button>
+
+
+                  
                     </div>
+                    
+                    <table className="table bg-white rounded border">
+                  <thead>
+                    <th>Title </th>
+                    <th>Quantity </th>
+                    <th>Barcode</th>
+                  </thead>
+
+                  {stock.stockProducts?.map((item) => {
+                    return (
+                      <tr key={item.idProduct}>
+                        <td>{item.titleProduct}</td>
+                        <td>{item.quantityProduct}</td>
+                        <td>{item.barcode}</td>
+                      </tr>
+                    );
+                  })}
+                </table>
+                
+               
+                
+                
                 </div>
+
+
+
+
                     )
+
+                    
     }
             </div>
+
+            
         </div>
 
         )
